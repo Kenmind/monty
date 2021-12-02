@@ -44,7 +44,10 @@ void _sub(stack_t **stack, unsigned int x)
 	int difference;
 
 	if (*stack == NULL || (*stack)->next == NULL)
-		_error(ERROR_SUB);
+	{
+		fprintf(stderr, "L<%d>: can't sub, stack too short\n", x);
+		exit(EXIT_FAILURE);
+	}
 
 	difference = (*stack)->next->n - (*stack)->n;
 
