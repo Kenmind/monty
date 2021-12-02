@@ -8,30 +8,26 @@
 
 void _push(stack_t **stack, unsigned int x)
 {
-	stack_t *node = NULL;
-	char *num;
-	(void)x;
+	stack_t *new_node = NULL;
 
-	if (traverse->input[1] == NULL)
-		printf("Error\n");/*handle_errors(ERROR_PUSH);*/
-	else
-		num = traverse->input[1];
-	if (_isDigit(num) == TRUE)
+	new_node = malloc(sizeof(stack_t));
+	if (new_node == NULL)
+		handle_error(ERR_BAD_MALL, NULL, 0, NULL);
+
+	new_node->n = param;
+	if (*stack)
 	{
-		node = malloc(sizeof(stack_t));
-		if (node == NULL)
-			printf("Error in malloc\n");/*handle_errors(ERROR_MALLOC);*/
+		new_node->next = *stack;
+		new_node->prev = (*stack)->prev;
+		(*stack)->prev = new_node;
+		*stack = new_node;
+		return;
 	}
-	else
-		printf("Error pushing\n");/*handle_errors(ERROR_PUSH);*/
 
-	node->n = atoi(num);
-	if (traverse->order == LIFO)
-		_lifo(stack, node);
-	else
-		_fifo(stack, node);
+	new_node->next = *stack;
+	new_node->prev = NULL;
+	*stack = new_node;
 }
-
 /**
  * _pall - prints all elements of the stack
  * @stack: pointer to head of stack
