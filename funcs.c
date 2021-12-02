@@ -13,20 +13,12 @@ void _push(stack_t **stack, unsigned int x)
 	char *num;
 	(void)x;
 
-	new_node = malloc(sizeof(stack_t));
-	if (new_node == NULL)
-		_error(ERROR_MALLOC);
 	if (traverse->input[1] == NULL)
 		_error(ERROR_PUSH);
 	else
 		num = traverse->input[1];
 	if (_isDigit(num) == TRUE)
 	{
-		new_node->next = *stack;
-		new_node->prev = (*stack)->prev;
-		(*stack)->prev = new_node;
-		*stack = new_node;
-		return;
 		new_node = malloc(sizeof(stack_t));
 		if (new_node == NULL)
 			_error(ERROR_MALLOC);
@@ -34,14 +26,12 @@ void _push(stack_t **stack, unsigned int x)
 	else
 		_error(ERROR_PUSH);
 
-	new_node->next = *stack;
-	new_node->prev = NULL;
-	*stack = new_node;
 	new_node->n = atoi(num);
 	if (traverse->order == LIFO)
-		_lifo(stack,new_node);
+		_lifo(stack, new_node);
 	else
-		_fifo(stack, new_node);}
+		_fifo(stack, new_node);
+}
 
 /**
  * _pall - prints all elements of the stack
