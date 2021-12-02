@@ -2,7 +2,6 @@
 
 /**
  * _add - add two numbers from the top of that stack
-
  * @stack: the stack
  * @x: the line number
  * Return: none
@@ -12,7 +11,7 @@ void _add(stack_t **stack, unsigned int x)
 {
 	if ((*stack)->next == NULL || (*stack)->next->next == NULL)
 	{
-		set_op_tok_error(short_stack_error(x, "add"));
+	/*	set_op_tok_error(short_stack_error(x, "add"));*/
 		return;
 	}
 

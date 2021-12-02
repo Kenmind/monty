@@ -95,6 +95,18 @@ typedef struct traverser_s
 extern trave_t *traverse;
 trave_t *traverse;
 
+/* <-------|ERRORS|-------> */
+int short_stack_error(unsigned int line_number, char *op);
+int div_error(unsigned int line_number);
+int pop_error(unsigned int line_number);
+int div_error(unsigned int line_number);
+int pchar_error(unsigned int line_number, char *message);
+int usage_error(void);
+int malloc_error(void);
+int f_open_error(char *filename);
+int unknown_op_error(char *opcode, unsigned int line_number);
+int no_int_error(unsigned int line_number);
+
 /* <-------| LISTS |-------> */
 
 void _lifo(stack_t **stack, stack_t *node);
