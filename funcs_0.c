@@ -17,7 +17,7 @@ void _add(stack_t **stack, unsigned int x)
 	}
 
 	(*stack)->next->next->n += (*stack)->next->n;
-	monty_pop(stack, x);
+	_pop(stack, x);
 }
 
 /**
