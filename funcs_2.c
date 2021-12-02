@@ -1,8 +1,5 @@
 #include "monty.h"
 
-void _stack(stack_t **stack, unsigned int line_number);
-void _queue(stack_t **stack, unsigned int line_number);
-
 /**
  * _stack - Converts a queue to a stack.
  * @stack: A pointer to the top mode node of a stack_t linked list.
