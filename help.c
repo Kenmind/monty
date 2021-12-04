@@ -30,6 +30,7 @@ int _isDigit(char *c)
 int built_in(void)
 {
 	trave_t *traverse = malloc(sizeof(trave_t) + 1);
+
 	if (!traverse)
 		_error(ERROR_MALLOC);
 
