@@ -10,10 +10,10 @@
 
 int main(int argc, char **argv)
 {
+	trave_t *traverse = NULL;
 	size_t n;
 	void (*execute)(stack_t **stack, unsigned int line_number);
 
-	traverse = NULL;
 	if (argc != 2)
 		_error(ERROR_USAGE_FILE);
 
@@ -23,7 +23,6 @@ int main(int argc, char **argv)
 
 	if (traverse->file == NULL)
 		_error(ERROR_OPEN_FILE);
-
 	while (getline(&traverse->line, &n, traverse->file) > 0)
 	{
 		traverse->line_num++;
@@ -34,6 +33,7 @@ int main(int argc, char **argv)
 		execute = _opcode();
 		execute(&traverse->stack, traverse->line_num);
 	}
+	free(traverse);
 	_free();
 	return (EXIT_SUCCESS);
 }

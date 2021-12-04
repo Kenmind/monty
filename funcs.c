@@ -10,6 +10,7 @@ void _push(stack_t **stack, unsigned int x)
 {
 
 	stack_t *new_node = NULL;
+	trave_t *traverse = NULL;
 	char *num;
 	(void)x;
 

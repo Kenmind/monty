@@ -29,7 +29,7 @@ int _isDigit(char *c)
 
 int built_in(void)
 {
-	traverse = malloc(sizeof(trave_t));
+	trave_t *traverse = malloc(sizeof(trave_t) + 1);
 	if (!traverse)
 		_error(ERROR_MALLOC);
 
@@ -44,7 +44,7 @@ int built_in(void)
 	traverse->line = NULL;
 	traverse->line_num = 0;
 	traverse->order = LIFO;
-
+	free(traverse);
 	return (EXIT_SUCCESS);
 }
 
@@ -55,6 +55,7 @@ int built_in(void)
 
 void (*_opcode(void))(stack_t **stack, unsigned int x)
 {
+	trave_t *traverse = NULL;
 	char *input_opcode;
 	instruction_t *i;
 	static instruction_t instructions[] = {
@@ -75,6 +76,8 @@ void (*_opcode(void))(stack_t **stack, unsigned int x)
 
 	if (!i->f)
 		_error(ERROR_UNKNOWN);
+	free(traverse);
+	free(input_opcode);
 
 	return (i->f);
 }
@@ -87,6 +90,7 @@ void (*_opcode(void))(stack_t **stack, unsigned int x)
 
 int _parse(char *line)
 {
+	trave_t *traverse = NULL;
 	char *delim, *s;
 	int len, i;
 
@@ -105,6 +109,7 @@ int _parse(char *line)
 		return (EXIT_FAILURE);
 
 	traverse->input[1] = strtok(NULL, delim);
+	free(traverse);
 
 	return (EXIT_SUCCESS);
 }

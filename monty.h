@@ -1,6 +1,7 @@
 #ifndef _LIFO_FIFO_H_
 #define _LIFO_FIFO_H_
 
+#define _GNU_SOURCE
 /* <-------|STANDARD LIBRARIES|-------> */
 
 #include <stdio.h>
@@ -93,7 +94,6 @@ typedef struct traverser_s
 /* <-----| GLOBAL VARIABLES |-----> */
 
 extern trave_t *traverse;
-trave_t *traverse;
 
 /* <-------|ERRORS|-------> */
 int short_stack_error(unsigned int line_number, char *op);

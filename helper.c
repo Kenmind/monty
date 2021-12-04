@@ -8,6 +8,7 @@
 
 void s_free(void)
 {
+	trave_t *traverse = NULL;
 	stack_t *temp;
 	stack_t *head;
 
@@ -31,6 +32,8 @@ void s_free(void)
 
 void _free(void)
 {
+	trave_t *traverse = NULL;
+
 	if (traverse != NULL)
 	{
 		if (traverse->file != NULL)
@@ -55,6 +58,7 @@ void _free(void)
 
 void _error(int x)
 {
+	trave_t *traverse = NULL;
 	unsigned int n;
 	static char *const errors[] = {
 		"Error: malloc failed\n", "USAGE: monty file\n",
