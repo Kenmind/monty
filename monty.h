@@ -1,7 +1,7 @@
 #ifndef _LIFO_FIFO_H_
 #define _LIFO_FIFO_H_
 
-#define _GNU_SOURCE
+/*#define _GNU_SOURCE*/
 /* <-------|STANDARD LIBRARIES|-------> */
 
 #include <stdio.h>
@@ -51,9 +51,9 @@
  */
 typedef struct stack_s
 {
-        int n;
-        struct stack_s *prev;
-        struct stack_s *next;
+	int n;
+	struct stack_s *prev;
+	struct stack_s *next;
 } stack_t;
 
 /**
@@ -66,8 +66,8 @@ typedef struct stack_s
  */
 typedef struct instruction_s
 {
-        char *opcode;
-        void (*f)(stack_t **stack, unsigned int line_number);
+	char *opcode;
+	void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
 
 /**

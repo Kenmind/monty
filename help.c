@@ -29,7 +29,7 @@ int _isDigit(char *c)
 
 int built_in(void)
 {
-	trave_t *traverse = malloc(sizeof(trave_t) + 1);
+	trave_t *traverse = malloc(sizeof(trave_t));
 
 	if (!traverse)
 		_error(ERROR_MALLOC);
@@ -56,7 +56,7 @@ int built_in(void)
 
 void (*_opcode(void))(stack_t **stack, unsigned int x)
 {
-/*	trave_t *traverse = NULL;*/
+	trave_t *traverse = NULL;
 	char *input_opcode;
 	instruction_t *i;
 	static instruction_t instructions[] = {
@@ -91,7 +91,7 @@ void (*_opcode(void))(stack_t **stack, unsigned int x)
 
 int _parse(char *line)
 {
-/*	trave_t *traverse = NULL;*/
+	trave_t *traverse = NULL;
 	char *delim, *s;
 	int len, i;
 

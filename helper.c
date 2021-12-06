@@ -57,7 +57,7 @@ void _free(void)
 
 void _error(int x)
 {
-/*	trave_t *traverse = NULL;*/
+	trave_t *traverse = NULL;
 	unsigned int n;
 	static char *const errors[] = {
 		"Error: malloc failed\n", "USAGE: monty file\n",
