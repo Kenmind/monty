@@ -50,7 +50,7 @@ void _fifo(stack_t **stack, stack_t *node)
 
 void _stack(stack_t **stack, unsigned int x)
 {
-	trave_t *traverse = NULL;
+/*	trave_t *traverse = NULL;*/
 	(void)stack;
 	(void)x;
 	traverse->order = LIFO;
@@ -65,7 +65,7 @@ void _stack(stack_t **stack, unsigned int x)
 
 void _queue(stack_t **stack, unsigned int x)
 {
-	trave_t *traverse = NULL;
+/*	trave_t *traverse = NULL;*/
 	(void)stack;
 	(void)x;
 	traverse->order = FIFO;

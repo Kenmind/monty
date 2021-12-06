@@ -1,5 +1,4 @@
 #include "monty.h"
-#include <stdio.h>
 
 /**
  * s_free - frees all malloc'd in stack
@@ -8,7 +7,7 @@
 
 void s_free(void)
 {
-	trave_t *traverse = NULL;
+/*	trave_t *traverse = NULL;*/
 	stack_t *temp;
 	stack_t *head;
 
@@ -32,7 +31,7 @@ void s_free(void)
 
 void _free(void)
 {
-	trave_t *traverse = NULL;
+/*	trave_t *traverse = NULL;*/
 
 	if (traverse != NULL)
 	{
@@ -58,7 +57,7 @@ void _free(void)
 
 void _error(int x)
 {
-	trave_t *traverse = NULL;
+/*	trave_t *traverse = NULL;*/
 	unsigned int n;
 	static char *const errors[] = {
 		"Error: malloc failed\n", "USAGE: monty file\n",

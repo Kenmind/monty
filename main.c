@@ -1,5 +1,4 @@
 #include "monty.h"
-#include <stdio.h>
 
 /**
  * main - main function
@@ -10,7 +9,7 @@
 
 int main(int argc, char **argv)
 {
-	trave_t *traverse = NULL;
+/*	trave_t *traverse = NULL;*/
 	size_t n;
 	void (*execute)(stack_t **stack, unsigned int line_number);
 
