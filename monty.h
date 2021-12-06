@@ -1,7 +1,7 @@
 #ifndef _LIFO_FIFO_H_
 #define _LIFO_FIFO_H_
 
-/*#define _GNU_SOURCE*/
+#define _GNU_SOURCE
 /* <-------|STANDARD LIBRARIES|-------> */
 
 #include <stdio.h>

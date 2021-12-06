@@ -7,7 +7,7 @@
 
 void s_free(void)
 {
-/*	trave_t *traverse = NULL;*/
+	trave_t *traverse = NULL;
 	stack_t *temp;
 	stack_t *head;
 
@@ -31,7 +31,7 @@ void s_free(void)
 
 void _free(void)
 {
-/*	trave_t *traverse = NULL;*/
+	trave_t *traverse = NULL;
 
 	if (traverse != NULL)
 	{
